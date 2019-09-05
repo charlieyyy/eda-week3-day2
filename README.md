@@ -14,3 +14,4 @@ Class materials for week 3 day 2 (09/05)
 
 1. open the file "week3hw.Rmd"
 2. complete assignment by answering ALL questions, and then 'knit' the assignment to pdf and push to your git repo. 
+3. Assignment due next thursday (09/12)
