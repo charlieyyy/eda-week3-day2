@@ -1,0 +1,82 @@
+title: "Week 3 homework assignment"
+output:
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+  
+# homework (assigned on Thursday (09/05), one week to complete)
+
+This homework is designed to get you to review the in-class notes + r code as well as work on your own code. Please 'knit' to pdf when finished and push to your repo.
+
+## Part 1: Midwest Data
+
+Recall our use of the `midwest` data from week3-day1. 
+
+1. In your own words, what does the function in this line of "week3-day1.Rmd"  do?
+```{r}
+g1 <- g1 + scale_y_continuous(breaks=seq(0, 1000000, 200000), labels = function(x){paste0(x/1000, 'K')})
+```
+
+2. Starting with one variable: During week3-day1, we learned about how to make a scatterplot in ggplot using `midwest` data. This was a useful illustration for how to (1) make a guess at a bivariate relationship in the data and (2) explore it using a scatterplot. But ultimately the graphic wasn't that interesting. Sometimes we need to take a step back and simply plot one variable at a time. 
+
+Plot a histogram in ggplot that explores the relationship of population totals by state. Include a clear title, and change the xlab and ylab to be easy to read words (labels).
+
+```{r}
+# answer 
+
+
+```
+
+3. Make a histogram and density plot for the percent of people below poverty
+
+```{r}
+#answer
+ggplot(midwest, aes(x = percbelowpoverty)) +
+  geom_histogram(aes(y = ..density..), colour = "black", fill = "white", binwidth = 1) +
+  geom_density(alpha = .2, fill="yellow") +
+  labs(title="Histogram of Percent of People below Poverty", y="Density", x="Percent of People below Poverty") +
+  theme_light()
+```
+
+
+## Part 2
+
+During week3-day2 we explored data about wine. 
+
+1. Make a barplot with the wine data to explore our original question about the relationship between alcohol content and quality. Why might a simple bar plot be misleading here?
+
+(Hint: you might want to remind them to pay attention to darker lines on the barplot.)
+
+```{r}
+#answer
+
+
+```
+
+2. A lot of the hardwork in learning R skills is learning how to read helpfiles and use stackoverflow on your own. I showed you a glimpse of information about themes in class. Use the code below to make additional changes. This might take a bit of digging and reading about these graphical components online. Specifically, can you figure out how to:
+
+* get rid of panel border completely and keep the grid lines?
+* put the legend on the top or bottom?
+* capitalize the legend level appropriately?
+* add units for alcohol content and wine quality?
+
+```{r}
+# starter code
+ggplot(winequality_red, aes(x=quality, y= alcohol)) +
+      geom_jitter(aes(col=`fixed acidity`)) +
+      scale_color_viridis(option = "D", direction = -1, alpha = .6) +
+      labs(title="Alcohol Content, Fixed Acidity and Wine Quality", y="Alcohol Content", x="Wine Quality")  +
+      theme_bw()
+```
+
+
+2. Explain in 1-3 sentences what we can learn from our wine graphic produced in class.
+
+Answer: 
+
+
+
+## Part 3
+
+Create and 'print' (i.e., so it's viewable in the PDF) one `best` graphic from the Nashville schools data and write 1-3 sentences about the graphic to explain it to your audience. Then tell us what you learned from this graphic, and why it is so interseting. 
