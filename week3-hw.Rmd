@@ -32,11 +32,9 @@ Plot a histogram in ggplot that explores the relationship of population totals b
 
 ```{r}
 #answer
-ggplot(midwest, aes(x = percbelowpoverty)) +
-  geom_histogram(aes(y = ..density..), colour = "black", fill = "white", binwidth = 1) +
-  geom_density(alpha = .2, fill="yellow") +
-  labs(title="Histogram of Percent of People below Poverty", y="Density", x="Percent of People below Poverty") +
-  theme_light()
+
+
+
 ```
 
 
